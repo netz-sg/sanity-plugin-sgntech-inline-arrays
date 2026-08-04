@@ -1,0 +1,122 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>icon</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+      }
+      body {
+        position: relative;
+        background: #0d0e12;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, sans-serif;
+      }
+      .glow {
+        position: absolute;
+        inset: -40%;
+        background: radial-gradient(circle at 50% 38%, #ff5500 0%, transparent 58%);
+        filter: blur(60px);
+        opacity: 0.4;
+      }
+      .stack {
+        position: relative;
+        width: 212px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      /* Closed rows: just a preview line */
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(160deg, #23262f, #171922);
+      }
+      .row .chev,
+      .open .chev {
+        width: 0;
+        height: 0;
+        flex: none;
+      }
+      .row .chev {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 7px solid rgba(255, 255, 255, 0.4);
+      }
+      .row .bar {
+        flex: 1;
+        height: 9px;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.24);
+      }
+      /* The open one: accent border, fields showing */
+      .open {
+        border-radius: 14px;
+        border: 3px solid #ff5500;
+        background: linear-gradient(160deg, #2a2029, #191722);
+        box-shadow: 0 14px 30px rgba(255, 85, 0, 0.3);
+        overflow: hidden;
+      }
+      .open .head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 14px 10px;
+      }
+      .open .chev {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 7px solid #ff5500;
+      }
+      .open .bar {
+        flex: 1;
+        height: 9px;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+      .fields {
+        padding: 0 14px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .box {
+        height: 26px;
+        border-radius: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(0, 0, 0, 0.32);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="stack">
+      <div class="row"><span class="chev"></span><span class="bar"></span></div>
+
+      <div class="open">
+        <div class="head"><span class="chev"></span><span class="bar"></span></div>
+        <div class="fields">
+          <span class="box"></span>
+          <span class="box"></span>
+        </div>
+      </div>
+
+      <div class="row"><span class="chev"></span><span class="bar"></span></div>
+    </div>
+  </body>
+</html>

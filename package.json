@@ -1,0 +1,81 @@
+{
+  "name": "sanity-plugin-sgntech-inline-arrays",
+  "version": "1.0.0",
+  "description": "Edit array items in place instead of in a dialog, with custom actions per item",
+  "keywords": [
+    "sanity",
+    "sanity-plugin",
+    "array",
+    "inline",
+    "editing",
+    "forms",
+    "studio-v6"
+  ],
+  "homepage": "https://github.com/netz-sg/sanity-plugin-sgntech-inline-arrays#readme",
+  "bugs": {
+    "url": "https://github.com/netz-sg/sanity-plugin-sgntech-inline-arrays/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netz-sg/sanity-plugin-sgntech-inline-arrays.git"
+  },
+  "license": "MIT",
+  "author": "SGNTech <kontakt@lifad.world>",
+  "type": "module",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "plugin-kit verify-package --silent && pkg-utils build --strict --check --clean",
+    "format": "oxfmt",
+    "link-watch": "plugin-kit link-watch",
+    "lint": "oxlint",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "watch": "pkg-utils watch --strict"
+  },
+  "dependencies": {
+    "@sanity/icons": "^5.2.1",
+    "@sanity/ui": "^3.5.1"
+  },
+  "devDependencies": {
+    "@sanity/browserslist-config": "^1.0.5",
+    "@sanity/pkg-utils": "^11.0.17",
+    "@sanity/plugin-kit": "^10.0.3",
+    "@types/react": "^19.2.18",
+    "oxfmt": "^0.61.0",
+    "oxlint": "^1.77.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "sanity": "^6.8.0",
+    "styled-components": "^6.4.4",
+    "typescript": "^6.0.3",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "sanity": "^5 || ^6.0.0-0"
+  },
+  "engines": {
+    "node": ">=20.19 <22 || >=22.12"
+  },
+  "browserslist": "extends @sanity/browserslist-config",
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "default": "./dist/index.js"
+      },
+      "./package.json": "./package.json"
+    }
+  }
+}

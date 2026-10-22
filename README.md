@@ -49,7 +49,7 @@ A plugin is now the only way this happens.
 npm install sanity-plugin-sgntech-inline-arrays
 ```
 
-Sanity Studio v5 or v6, React 18 or 19.
+Sanity Studio 6.9.2 or newer (Sanity UI v4) and React 19.2. For Studio v5 or older v6 releases, install version 1.x.
 
 ## Usage
 
